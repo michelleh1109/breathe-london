@@ -1,0 +1,13 @@
+# breathe-london
+Research in Cornell Sibley School of Mechanical and Aerospace Engineering with Prof. K. Max Zhang; Developed algorithms to extract air pollution hotspot and source insights from distributed air quality sensor networl
+
+### Introduction
+Cities are investing into distributed air quality monitoring networks to combat PM2.5 emissions as exposure can lead to premature mortality, decreased quality of life, and cardiovascular problems. Alarmingly, 97% of global cities still fail to meet the WHO PM2.5 guidelines. Yet few studies investigate how to extract insight from these networks to develop pollution control measures. Especially with growing traffic-reduction initiatives in advanced cities, the proportion of non-traffic
+related emissions is rising. It is vital to target these non-traffic sources to meet WHO health guidelines. Categorizing non-traffic emissions sources is difficult due to spatial-temporal variability, intermixing primary sources, and high transboundary and secondary formation sources,  
+This research develops algorithms for cities to systematically extract hotspot and source identification from their distributed network. A major accomplishment is the identification of major non-traffic related sources at their site locations that have been previously challenging to characterize in the emission inventories. 
+
+## Network Analysis
+We identified fewer, but more accurate ”true” hotspots, which differs from conventional methods to capture a broad net of locations.  This optimizes limited resources to maximize impact.  The key principle of network analysis is to explore variability within the network to screen for PM2.5 hotspots against background concentrations. Intra-ranking algorithm first ranks sites between days to to filter out regional phenomena. Inter-ranking then ranks between monitoring sites’  daily PM2.5 concentrations ("inter”) on each day and is robust against outlier periods. However, 
+our initial iterations were doing exactly what we didn’t want: identifying “false” hotspots with only slightly elevated PM2.5 concentrations, leading to months of inconclusive local investigation. A year in, I realized our conceptual flaw: inter-ranking treated all flagged days equally, regardless of their rankin g (i.e. sites in the top x% each day are binary flagged, and those with over y% flagged days in the study period are hotspots). I introduced a new weighted inter-ranking algorithm that prioritized sites consistently highly ranked instead of binary classification. 
+![image](https://github.com/michelleh1109/breathe-london/assets/90575654/4ce642a4-602c-4284-b330-be79972d3a71)
+
